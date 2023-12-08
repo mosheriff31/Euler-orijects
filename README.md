@@ -1,2 +1,2 @@
 # Euler-orijects
-this one is nothing special just me practicing
+this one is nothing special just for fun
