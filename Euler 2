@@ -1,1 +1,11 @@
+zone = 4*(10**6)
+num1 = 1
+num2 = 2
+fibosum = 0
+while num1 < zone:
+    fibosum += num1
+    num1,num2 = num2,num1 + num2
+       
+print(fibosum)
+
 
