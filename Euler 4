@@ -1,0 +1,38 @@
+def palindromic(n):
+    n = str(n)
+    return n == n[::-1]
+
+largest_palindrome = 0
+first_number, second_number = 0, 0
+
+for num1 in range(999, 99, -1):
+    for num2 in range(999, 99, -1):
+        product = num1 * num2
+        if palindromic(product) and product > largest_palindrome:
+            largest_palindrome = product
+            first_number, second_number = num1, num2
+
+print(f" {largest_palindrome} = {first_number} x {second_number}")
+
+
+
+#this one is the first and slower version        """def palindromic(n):
+                                                    c = True
+                                                    n=str(n).strip()
+                                                    l=len(n)
+                                                    zero=0
+                                                    for i in range(l//2):
+                                                        l=l-1
+                                                        if n[zero] != n[l] :
+                                                            c = False
+                                                        zero+=1
+                                                    return c
+                                                
+                                                for fir in range(999,99,-1):
+                                                    for sec in range(999,99,-1):
+                                                        zar = fir*sec
+                                                        if palindromic(zar) == True:
+                                                            largest=zar
+                                                            firstnum,secondnum = fir,sec
+                                                print(largest,"=",firstnum,"x",secondnum)  
+                                                """
