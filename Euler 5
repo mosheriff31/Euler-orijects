@@ -1,1 +1,16 @@
+def check_remainder(num):
+    status = True
+    while status == True:
+        for i in range(20):
+            if num % (i+1) != 0 :
+                status = False
+                break
+        else:
+            return status
 
+number = 20
+stat = None
+while stat is not True:
+    number+=1
+    stat = check_remainder(number)
+print(number)
