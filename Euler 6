@@ -1,0 +1,14 @@
+def sum_square():   #calculates the square of the number and than adds to sum of the squares 
+    sum_of_squares = 0
+    for num in range(1,101):
+        sum_of_squares += (num**2)
+    return sum_of_squares
+
+def square_sumnumbers():      # calculates the sum of numbers and than squares the sum
+    sum_numbers = 0
+    for i in range(1,101):
+        sum_numbers += i
+    square_of_sum = (sum_numbers**2)
+    return square_of_sum
+
+print(square_sumnumbers() - sum_square())
