@@ -1,11 +1,10 @@
-zone = 4*(10**6)
+zone = 4000000
 num1 = 1
 num2 = 2
 fibosum = 0
-while num1 < zone:
-    fibosum += num1
+while num1 <= zone:
     num1,num2 = num2,num1 + num2
+    if (num1 % 2 )== 0:        # sums the even numbers only
+        fibosum += num1
        
 print(fibosum)
-
-
