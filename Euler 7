@@ -1,0 +1,16 @@
+def prime(num):
+    stat = True
+    while stat == True :
+        for i in range(num-1,1,-1):
+            if (num % i) == 0 :
+                stat = False
+                break
+        return stat
+counter = 0
+i=1
+while counter < 10001:
+    i+=1
+    if prime(i) == True:
+        counter+=1
+
+print(i)
