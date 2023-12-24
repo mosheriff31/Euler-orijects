@@ -2,9 +2,10 @@ with open("nums.txt" , "r") as file: #i used text file for reading numbers
     read = file.read().split("\n")       #for deleting new lines
     ##print(read,len(read))
 numbers=[]
-for i in read:
-    for number in i:
-        numbers.append(int(number))
+for line in read:                                   #for line in read:
+    for number in line:                             #    if line:
+        numbers.append(int(number))                 #        numbers.extend(int(char)for char in line)
+                    # Convert each character to an integer and append to the numbers                                                
 ##print(numbers,len(numbers))
 
 checkind = 0
