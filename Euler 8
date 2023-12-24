@@ -1,0 +1,21 @@
+with open("nums.txt" , "r") as file: #i used text file for reading numbers
+    read = file.read().split("\n")       #for deleting new lines
+    ##print(read,len(read))
+numbers=[]
+for i in read:
+    for number in i:
+        numbers.append(int(number))
+##print(numbers,len(numbers))
+
+checkind = 0
+largest_product_check = 1
+largest_product = 0
+while checkind != (988):   #checks if there"s 13 numbers left that still remained unchecked in series
+    for i in range(checkind,(checkind+13)):
+        largest_product_check = (largest_product_check * numbers[i])
+    if largest_product_check > largest_product:
+        largest_product = largest_product_check
+    checkind+=1
+    largest_product_check = 1
+
+print(largest_product)
