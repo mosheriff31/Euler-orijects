@@ -1,0 +1,42 @@
+with open("numbers.txt") as file:
+    textfile = file.readlines()
+    filelines = []
+    result= 0
+    for line in textfile:
+        filelines.append(line.rstrip().split(" "))
+    # Calculate product for horizontal, vertical, and diagonal directions
+    for line in range(0, len(filelines) - 3):
+        for idx in range(0, len(filelines)):
+            #down
+            r = ((int(filelines[line][idx])) * (int(filelines[line + 1][idx]))*
+                (int(filelines[line + 2][idx])) * (int(filelines[line + 3][idx])))
+            if r>result:
+                result = r
+            if idx<=16:
+                # Diagonal (bottom-right)
+                r = ((int(filelines[line][idx])) * (int(filelines[line + 1][idx + 1]))*
+                (int(filelines[line + 2][idx + 2])) * (int(filelines[line + 3][idx + 3])))
+                if r>result:
+                    result = r
+                #right
+                r = ((int(filelines[line][idx])) * (int(filelines[line][idx + 1]))*
+                (int(filelines[line][idx + 2])) * (int(filelines[line][idx + 3])))
+                if r>result:
+                    result = r
+            if idx>=3:
+                # Diagonal (bottom-left)
+                r = ((int(filelines[line][idx])) * (int(filelines[line + 1][idx - 1]))*
+                (int(filelines[line + 2][idx - 2])) * (int(filelines[line + 3][idx - 3])))
+                if r>result:
+                    result = r        
+   
+#bottom lines right
+    for line in range(len(filelines) - 3,len(filelines)):
+        for idx in range(0, len(filelines)):
+            if idx<=16:
+                
+                r = ((int(filelines[line][idx])) * (int(filelines[line][idx + 1]))*
+                (int(filelines[line][idx + 2])) * (int(filelines[line][idx + 3])))
+                if r>result:
+                    result = r
+print(result)
