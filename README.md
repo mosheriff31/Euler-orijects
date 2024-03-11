@@ -1,2 +1,3 @@
 # Euler-projects
-this one is nothing special just for fun
+nothing special just for fun and practice
+https://projecteuler.net
